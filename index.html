@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        .profile-picture {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        .project {
+            margin-bottom: 20px;
+        }
+        .contact-form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        .close {
+            color: #aaa;
+            float: right; 
+            font-size: 28px; 
+            font-weight: bold; 
+        }
+
+        .close:hover,
+        .close:focus {
+          color: black; 
+          text-decoration: none; 
+          cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Personal Portfolio</h1>
+</header>
+
+<section id="about">
+    <h2>About Us</h2>
+
+    <!-- Profile of Siva Prakash Sinakano -->
+    <div class="profile" onclick="openModal('sivaModal')">
+        <img src="ladakh81.png" alt="Siva Prakash Sinakano" class="profile-picture">
+        <div class="profile-details">
+            <h3>Siva Prakash Sinakano</h3>
+            <p>Event and Incident Management Support specialist who monitoring and support of bank's critical infrastructure and applications.</p>
+        </div>
+    </div>
+
+    <!-- Profile of Neoh -->
+    <div class="profile" onclick="openModal('neohModal')">
+        <img src="Neoh.jpg" alt="Neoh Sing Hooi" class="profile-picture">
+        <div class="profile-details">
+            <h3>Neoh Sing Hooi</h3>
+            <p>Project Engineer who enjoys managing projects.</p>
+        </div>
+    </div>
+
+    <!-- Profile of Sharmilapreeya -->
+    <div class="profile" onclick="openModal('sharmilapreeyaModal')">
+        <img src="Sharmilapreeya.jpg" alt="Sharmilapreeya Selvarajah" class="profile-picture">
+        <div class="profile-details">
+            <h3>Sharmilapreeya Selvarajah</h3>
+            <p>IT Administrator ensuring efficient operations.</p>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="project">
+        <div class="project-content">
+            <img src="Marine Debris Pollution Data Collection.jpg" alt="Project Image" class="thumbnail" onclick="openModal(this)">
+            <div class="project-details">
+                <h3>Project: Marine Debris Pollution Data Collection</h3>
+                <p>This project aims to facilitate the reporting of marine debris by users, providing a structured and user-friendly interface for data submission. It is a well-structured, visually appealing, and functionally robust tool for gathering important data on marine debris incidents. Its comprehensive data validation, user-friendly design, and responsive layout make it an effective solution for engaging the public in reporting and addressing marine pollution.</p>
+            </div>
+        </div>
+    </div>
+    <div class="project">
+        <div class="project-content">
+            <img src="Database - Inventory Management System.jpg" alt="Project Image" class="thumbnail" onclick="openModal(this)">
+            <div class="project-details">
+                <h4>Project: Database - Inventory Management System</h4>
+                <p>The integration of an inventory system into a database provides a comprehensive solution for modern inventory management. This data-driven approach reduces errors, optimizes costs, and enhances customer satisfaction. It also facilitates efficient order fulfillment, real-time insights, and strategic planning. This user-centric approach empowers small to medium-sized retail businesses, fostering growth and customer loyalty, and fostering a dynamic, competitive business environment.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modals for Detailed Information -->
+<div id="sivaModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('sivaModal')">&times;</span>
+      <h2>Siva Prakash Sinakano</h2>
+      <p>I'm Siva Prakash from Kulai, Johor. I am responsible for providing 24x7 end to end detailed monitoring and support of all infrastructure and application components critical to the bank. This includes monitoring of the network, databases, middleware, backup, storage and, application with the goal of proactively identifying and resolving performances issues prior to interruption of services to the customer. As part of Event monitoring team, I also perform trending and analysis using monitoring tools or reports to proactively identify and address potential issues prior to production impact. Partner with change operation to support change implementations and perform all environment network traffic routing and web/application server restarts.p>
+        
+        <p>I have done a Professional Diploma in Network-Centered Computing, which provides a broad notion of the specialty. In the process of personal growth, I received multivariate certification and training in multiple fields. My experience in information technology allows me to respond adequately to difficulties and help any organization evolve and develop further.</p>
+
+        <p>I am a passionate traveler, constantly seeking new challenges and opportunities in the world. I enjoy motorbike trips, which allow me to experience local cultures and surroundings. I am also planning to build new contacts and friends, as well as exchange stories.</
+      </p>
+    </div>
+</div>
+
+<div id="neohModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('neohModal')">&times;</span>
+      <h2>Neoh Sing Hooi</h2>
+      <p>I’m Neoh Sing Hooi, a Project Engineer who enjoys managing projects and making sure everything runs smoothly. I oversee projects from start to finish, ensure they are completed on time, meet high standards, and meet client needs. I work closely with teams to find practical solutions and get things done efficiently.</p>
+
+      <p>Outside of work, I love staying active through sports, which helps me stay focused, develop teamwork skills, and keep a positive attitude. I aim to keep growing in my career while balancing my personal interests.</p>
+    </div>
+</div>
+
+<div id="sharmilapreeyaModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('sharmilapreeyaModal')">&times;</span>
+      <h2>Sharmilapreeya</h2>
+      <p>I'm Sharmilapreeya from Petaling Jaya, Selangor. I'm currently working as an IT Administrator. I ensure an efficient operation of my organization’s IT infrastructure by managing networks, maintaining systems, and implementing security measures to protect against cyber threats. I provide technical support to employees, monitor system performance, and document IT processes. Additionally, I ensure compliance with organizational and regulatory standards, playing a vital role in safeguarding data and maintaining efficient technology operations.
+
+      <p>Besides that, I enjoy both cooking and watching movies. Cooking allows my creativity in experimenting with flavors and techniques, making each meal unique and enjoyable. Watching movies provides relaxation and entertainment, offering a chance to explore different stories, genres, and cultures. Together, these hobbies offer a perfect balance of creativity and leisure.</p>
+    </div>
+</div>
+
+<!-- Contact Me Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm" action="https://formspree.io/f/xpwazeor" method="POST">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Your message:</label>
+            <textarea name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+    <p id="formMessage" style="color: rgba(5, 5, 5, 0.979); display: none;">Message sent successfully!</p>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <p><strong>&copy; 2024 Personal Portfolio. All Rights Reserved.</strong></p>
+</footer>
+
+<!-- JavaScript for Modal and Form Functionality -->
+<script>
+// Function to open modal
+function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "block";
+}
+
+// Function to close modal
+function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "none";
+}
+
+// Form submission handler
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const form = this;
+    const formMessage = document.getElementById('formMessage');
+
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            form.reset(); // Reset the form fields
+            formMessage.style.display = 'block'; // Show success message
+            setTimeout(() => formMessage.style.display = 'none', 5000); // Hide message after 5 seconds
+        } else {
+            alert('Oops! There was a problem sending your message.');
+        }
+    })
+    .catch(error => {
+        alert('Error: Could not send your message.');
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+    background-color: #5da0e4;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    text-align: center; /* Center the header */
+}
+
+.name {
+    margin-bottom: 20px; /* Space below the name */
+}
+
+/* Profile Section Styles */
+.profile {
+    display: flex; /* Use flexbox for alignment */
+    align-items: flex-start; /* Align items at the top */
+    margin-bottom: 20px; /* Space below the profile section */
+}
+
+.profile-picture {
+    width: 180px; /* Set width for the profile picture */
+    height: 150px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make it circular */
+    border: 2px solid #333; /* Optional border */
+}
+
+.profile-details {
+    margin-left: 20px; /* Space between image and text */
+}
+
+/* About Section Styles */
+h2 {
+    margin-top: 20px; /* Space above section headings */
+}
+
+p {
+    line-height: 1.6; /* Improve readability with line height */
+}
+
+/* Portfolio Section Styles */
+#portfolio {
+    margin-top: 20px; /* Space above portfolio section */
+}
+
+.project {
+   display: flex; /* Use flexbox for alignment */
+   align-items: flex-start; /* Align items at the top */
+   margin-bottom: 20px; /* Space below each project */
+}
+
+.project-content {
+   display: flex; /* Use flexbox for alignment of image and details */
+   align-items: flex-start; /* Align items at the top */
+}
+
+.thumbnail {
+   width: 100%; /* Set width to 100% of its container */
+   max-width: 300px; /* Maximum width to control size */
+   height: auto; /* Maintain aspect ratio */
+   border-radius: 8px; /* Optional rounded corners */
+   cursor: pointer; /* Change cursor on hover */
+   margin-right: 20px; /* Space between image and text details */
+}
+
+/* Contact Form Styles */
+#contact {
+   background-color: #5c72f0; /* Light background for the contact section */
+   padding: 20px;
+   border-radius: 8px; /* Rounded corners */
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+   max-width: 400px; /* Set maximum width for the contact form */
+   margin: 20px auto; /* Center the form with margin on top and bottom */
+}
+
+h2 {
+   text-align: center; /* Center the heading */
+}
+
+.form-group {
+   margin-bottom: 15px; /* Space between form groups */
+}
+
+label {
+   display: block; /* Make labels block elements */
+   margin-bottom: 5px; /* Space below labels */
+   font-weight: bold; /* Make labels bold */
+}
+
+input[type=text],
+input[type=email],
+textarea {
+   width: 100%; /* Full width inputs */
+   padding: 12px; /* Padding inside inputs */
+   border: 1px solid #ccc; /* Border color */
+   border-radius: 4px; /* Rounded corners */
+   box-sizing: border-box; /* Include padding in width calculation */
+}
+
+button[type=submit] {
+   background-color: #04AA6D; /* Submit button color */
+   color: white; /* Text color for button */
+   padding: 12px 20px; /* Padding around button text */
+   border: none; /* Remove default border */
+   border-radius: 4px; /* Rounded corners for button */
+   cursor: pointer; /* Pointer cursor on hover */
+}
+
+button[type=submit]:hover {
+   background-color: #45a049; /* Darker shade on hover */ 
+}
+
+/* Modal Styles */
+.modal {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1000; /* Sit on top of other content */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgba(0,0,0,0.8); /* Black w/ opacity (background)*/
+   padding-top: 60px;
+}
+
+.modal-content {
+   margin:auto;
+   display:block;
+   max-width :80%;/* Maximum width of modal image */ 
+   max-height :80%;/* Maximum height of modal image */ 
+}
+
+.close {
+   position:absolute;
+   top :10px;
+   right :25px;
+   color:white;
+   font-size :35px;
+   font-weight:bold;
+}
+.close:hover,
+.close :focus{
+   color:red;
+   cursor:pointer;
+}
+
+/* Footer Styles */
+footer {
+   text-align:center;
+   margin-top :20px;
+}
